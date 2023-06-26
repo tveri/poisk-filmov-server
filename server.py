@@ -38,7 +38,7 @@ def getfilms():
     filmcount = int(request.args['filmcount'])
     querry = request.args['q']
     searchType = request.args['s']
-    return make_response(filmSearch(films, querry, searchType=searchType)[offset * filmcount:filmcount + offset * filmcount])
+    return make_response(jsonify(filmSearch(films, querry, searchType=searchType)[offset * filmcount:filmcount + offset * filmcount]))
 
 
 
